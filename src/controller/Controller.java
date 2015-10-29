@@ -1,13 +1,9 @@
 package controller;
 
-import java.awt.List;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
-import java.util.Vector;
-import java.util.function.Consumer;
 
 /**
  *
