@@ -5,6 +5,7 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.text.NumberFormat;
+import java.util.Objects;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -42,7 +43,7 @@ public class PrincipalForm extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabelJogos = new javax.swing.JLabel();
         jButtonIniciar = new javax.swing.JButton();
         jButtonParar = new javax.swing.JButton();
         jPanelDezenas = new javax.swing.JPanel();
@@ -54,6 +55,8 @@ public class PrincipalForm extends javax.swing.JFrame {
         jTextField6 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabelNumeroJogos = new javax.swing.JLabel();
+        jButtonReiniciar = new javax.swing.JButton();
+        jButtonJogoAleatorio = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -113,6 +116,20 @@ public class PrincipalForm extends javax.swing.JFrame {
 
         jLabelNumeroJogos.setText("Número de jogos");
 
+        jButtonReiniciar.setText("Reiniciar");
+        jButtonReiniciar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonReiniciarActionPerformed(evt);
+            }
+        });
+
+        jButtonJogoAleatorio.setText("Gerar Jogo Aleatório");
+        jButtonJogoAleatorio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonJogoAleatorioActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -120,18 +137,24 @@ public class PrincipalForm extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(81, 81, 81)
-                        .addComponent(jButtonIniciar)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonParar))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(jLabelNumeroJogos)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanelDezenas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanelDezenas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                    .addGap(32, 32, 32)
+                                    .addComponent(jLabelNumeroJogos)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabelJogos, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jButtonIniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jButtonParar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jButtonReiniciar)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addComponent(jButtonJogoAleatorio)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -141,20 +164,23 @@ public class PrincipalForm extends javax.swing.JFrame {
                 .addComponent(jPanelDezenas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonIniciar)
-                    .addComponent(jButtonParar))
-                .addGap(32, 32, 32)
+                    .addComponent(jButtonReiniciar)
+                    .addComponent(jButtonParar)
+                    .addComponent(jButtonIniciar))
+                .addGap(18, 18, 18)
+                .addComponent(jButtonJogoAleatorio)
+                .addGap(37, 37, 37)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelNumeroJogos, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(71, 71, 71))
+                    .addComponent(jLabelNumeroJogos)
+                    .addComponent(jLabelJogos, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,12 +199,30 @@ public class PrincipalForm extends javax.swing.JFrame {
         }
         Integer[] randomIntegers = Controller.getRandomIntegers(MAX_NUMBERS);
         jLabelNumeroJogos.setVisible(true);
+        //Evita a duplicação da thread que conta os jogos
+        this.jButtonIniciar.setEnabled(false);
+        this.jButtonReiniciar.setEnabled(false);
+        this.jButtonJogoAleatorio.setEnabled(false);
+        this.jLabelJogos.setVisible(true);
         simular(numbers, randomIntegers);
     }//GEN-LAST:event_jButtonIniciarActionPerformed
 
     private void jButtonPararActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPararActionPerformed
+        //Ativa o botão iniciar
+        this.jButtonIniciar.setEnabled(true);
+        this.jButtonReiniciar.setEnabled(true);
+        this.jButtonJogoAleatorio.setEnabled(true);
         parar();
     }//GEN-LAST:event_jButtonPararActionPerformed
+
+    private void jButtonReiniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonReiniciarActionPerformed
+        reiniciar();
+    }//GEN-LAST:event_jButtonReiniciarActionPerformed
+
+    private void jButtonJogoAleatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJogoAleatorioActionPerformed
+        this.jogos = 1;
+        gerarJogoAleatorio();
+    }//GEN-LAST:event_jButtonJogoAleatorioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -220,9 +264,11 @@ public class PrincipalForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonIniciar;
+    private javax.swing.JButton jButtonJogoAleatorio;
     private javax.swing.JButton jButtonParar;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButtonReiniciar;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabelJogos;
     private javax.swing.JLabel jLabelNumeroJogos;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelDezenas;
@@ -266,6 +312,9 @@ public class PrincipalForm extends javax.swing.JFrame {
                 numbers[i++] = num;
             }
         }
+        if (numbersIsDuplicated()) {
+            throw new IllegalArgumentException("Há uma ou mais dezenas duplicadas");
+        }
     }
 
     private void simular(Integer[] numbers, Integer[] randomIntegers) {
@@ -276,11 +325,61 @@ public class PrincipalForm extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "Foram necessários " + formatNumber(jogos) + " jogos para ganhar o grande premio!");
                     break;
                 } else {
-                    this.jLabel1.setText(formatNumber(++jogos));
+                    this.jLabelJogos.setText(formatNumber(++jogos));
                     random = Controller.getRandomIntegers(MAX_NUMBERS);
                 }
             }
         });
         t.start();
+    }
+
+    private boolean numbersIsDuplicated() {
+        for (int i = 0; i < numbers.length; i++) {
+            for (int j = 0; j < numbers.length; j++) {
+                if (i == j) {
+                    continue;
+                }
+                if (Objects.equals(numbers[i], numbers[j])) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private void reiniciar() {
+        limparCampos();
+        jButtonIniciar.setEnabled(true);
+        this.jogos = 1;
+        this.jLabelNumeroJogos.setVisible(false);
+        this.jLabelJogos.setVisible(false);
+    }
+
+    private void limparCampos() {
+        JTextField[] numberFields = getNumberFields();
+        for (JTextField numberField : numberFields) {
+            numberField.setText("");
+        }
+    }
+
+    private void gerarJogoAleatorio() {
+        numbers = Controller.getRandomIntegers(MAX_NUMBERS);
+        JTextField[] fields = getNumberFields();
+        int i = 0;
+        for (JTextField field : fields) {
+            field.setText(numbers[i++] + "");
+        }
+    }
+
+    private JTextField[] getNumberFields() {
+        Component[] components = jPanelDezenas.getComponents();
+        JTextField[] fields = new JTextField[6];
+        int i = 0;
+        for (Component component : components) {
+            if (component instanceof JTextField) {
+                fields[i++] = (JTextField) component;                
+            }
+        }
+        return fields;
     }
 }
