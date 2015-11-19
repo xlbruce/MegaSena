@@ -30,6 +30,28 @@ public class Controller {
         return result;
     }
 
+    public static boolean temQuadra(int[] a, int[] b) {
+        final int QUADRA = 4;
+        int count = 0;
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] == b[i]) {
+                count++;
+            }
+        }
+        return count == QUADRA;
+    }
+    
+    public static boolean temQuina(int[] a, int[] b) {
+        final int QUINA = 5;
+        int count = 0;
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] == b[i]) {
+                count++;
+            }
+        }
+        return count == QUINA;
+    }
+    
     public static boolean compare(int[] a, int[] b) {
         if (a.length == b.length) {
             for (int i = 0; i < a.length; i++) {
